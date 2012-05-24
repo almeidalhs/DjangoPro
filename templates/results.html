@@ -1,0 +1,18 @@
+<html>
+<head><title>
+
+</title></head>
+<h1>{{ poll.question }}</h1>
+<ul>
+{% for choice in poll.choice_set.all %}
+<li>{{ choice.choice }} -- {{ choice.votes }}
+vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<ul>
+    <li>
+        <a href="{% url show_Poll_index %}" ><li>Back to Index</li></a>
+    </li>
+</ul>
+</html>
